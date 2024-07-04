@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgmu5c3fa8bsi"]
+
+[ext_resource type="Script" path="res://Menu.gd" id="1_mfe48"]
+[ext_resource type="PackedScene" uid="uid://cyle1bi68562j" path="res://scenes/Options_Menu.tscn" id="2_t05x1"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mfe48")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 116.0
+offset_bottom = 136.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="ModManagerButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mod Manager"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Control" parent="." instance=ExtResource("2_t05x1")]
+layout_mode = 1
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
