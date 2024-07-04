@@ -420,7 +420,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"Walking Backwards"]
+"values": [&"Walking Up"]
 }
 
 [sub_resource type="Animation" id="Animation_g1r0i"]
@@ -462,7 +462,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"Walking Forward"]
+"values": [&"Walking Down"]
 }
 
 [sub_resource type="Animation" id="Animation_cm42h"]
@@ -757,20 +757,22 @@ animation = &"Walking Left"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_ybkw7"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_gra81")
-blend_point_0/pos = Vector2(0, -1)
+blend_point_0/pos = Vector2(0, -1.1)
 blend_point_1/node = SubResource("AnimationNodeAnimation_i1f1k")
-blend_point_1/pos = Vector2(0, 1)
+blend_point_1/pos = Vector2(0, 1.1)
 blend_point_2/node = SubResource("AnimationNodeAnimation_4y6l3")
 blend_point_2/pos = Vector2(1, 0)
 blend_point_3/node = SubResource("AnimationNodeAnimation_f4meg")
 blend_point_3/pos = Vector2(-1, 0)
+min_space = Vector2(-1, -1.1)
+max_space = Vector2(1, 1.1)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3ioug"]
 advance_mode = 0
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uncu3"]
-advance_mode = 2
+advance_mode = 0
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_khhgh"]
 advance_mode = 2
@@ -781,7 +783,7 @@ states/Idle/node = SubResource("AnimationNodeBlendSpace2D_tyk1n")
 states/Idle/position = Vector2(338, 185)
 states/Start/position = Vector2(171, 185)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_ybkw7")
-states/Walk/position = Vector2(535, 185)
+states/Walk/position = Vector2(537, 185)
 transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_3ioug"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_uncu3"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_khhgh")]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
@@ -795,7 +797,7 @@ position = Vector2(0, 12)
 shape = SubResource("CapsuleShape2D_kpvs4")
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
-position = Vector2(1108, 561)
+scale = Vector2(1, 1.00264)
 sprite_frames = SubResource("SpriteFrames_qw55p")
 animation = &"Walking Backwards"
 
@@ -810,4 +812,4 @@ root_node = NodePath("../Body")
 tree_root = SubResource("AnimationNodeStateMachine_mdhkj")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(0.004969, -1.09512)
-parameters/Walk/blend_position = Vector2(0.0819876, 0.56541)
+parameters/Walk/blend_position = Vector2(-0.262112, 0.390746)
