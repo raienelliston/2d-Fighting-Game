@@ -12,12 +12,11 @@ func _process(delta):
 
 
 func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/Main.tscn")
-
+	get_tree().change_scene_to_file("res://scenes/Dev_Level.tscn")
 
 func _on_options_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/Options_Menu.tscn")
 
 func _on_quit_button_pressed():
 	get_tree().quit()
-
+	set_process(false)
