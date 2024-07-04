@@ -1,10 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://bae4vswwevc1p"]
 
-[ext_resource type="Texture2D" uid="uid://bfnml8wylh6e3" path="res://assets/character/Test_Character.png" id="1_epkef"]
+[ext_resource type="SpriteFrames" uid="uid://cgvjpw5nk6iq1" path="res://assets/character/Test_Character_Sprite_Frames.tres" id="1_7k2g8"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(2, 3)
 
-[node name="TestCharacter" type="Sprite2D" parent="."]
-position = Vector2(119, -1723)
-texture = ExtResource("1_epkef")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_7k2g8")
