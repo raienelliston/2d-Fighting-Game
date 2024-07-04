@@ -24,6 +24,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Exit Button" type="Button" parent="MarginContainer/VBoxContainer"]
